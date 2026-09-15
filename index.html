@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- =====================================================
+         PROJETO : Cor & Papel
+         ARQUIVO : index.html
+         VERSÃO  : 0.1.0
+         -----------------------------------------------------
+         DESCRIÇÃO:
+         Página inicial do site da Cor & Papel.
+         Esta página apresenta a empresa e direciona
+         o visitante para o catálogo de produtos.
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Cor & Papel | Papelaria Personalizada</title>
+
+    <!-- ===========================
+         CSS BASE
+    ============================ -->
+
+<link rel="stylesheet" href="css/base/resets.css">
+<link rel="stylesheet" href="css/base/variables.css">
+<link rel="stylesheet" href="css/base/global.css">
+
+<link rel="stylesheet" href="css/components/hero.css">
+<link rel="stylesheet" href="css/components/header.css">
+
+<!-- SEMPRE O ÚLTIMO -->
+<link rel="stylesheet" href="css/components/header-mobile.css">
+<link rel="stylesheet" href="css/components/categorias.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+
+ <header id="header"></header>
+
+    <!-- =====================================================
+         CONTEÚDO PRINCIPAL
+    ====================================================== -->
+
+    <main id="main">
+
+        <!-- ==============================================
+             Banner Principal
+        =============================================== -->
+
+        <<!-- ==========================================
+     BANNER PRINCIPAL
+========================================== -->
+
+<section class="hero">
+
+    <div class="container">
+
+        <picture>
+
+            <!-- Mobile -->
+            <source
+                media="(max-width:768px)"
+                srcset="assets/images/banner/banner-home-mobile.webp">
+
+            <!-- Desktop -->
+            <img
+                src="assets/images/banner/banner-home-desktop.webp"
+                alt="Volta às Aulas - Etiquetas Personalizadas"
+                class="hero-banner">
+
+        </picture>
+
+    </div>
+
+</section>
+        <!-- ==============================================
+             Produtos em Destaque
+        =============================================== -->
+
+        <section id="featured-products">
+
+        </section>
+
+        <!-- ==============================================
+             Destaque para o Catálogo
+        =============================================== -->
+
+        <section id="catalog-highlight">
+
+        </section>
+
+        <!-- ==============================================
+             Sobre a Empresa
+        =============================================== -->
+
+        <section id="about-preview">
+
+        </section>
+
+    </main>
+
+    <!-- =====================================================
+         RODAPÉ
+    ====================================================== -->
+
+    <footer id="footer">
+
+    </footer>
+
+    <!-- ===========================
+         JAVASCRIPT
+    ============================ -->
+
+    <script src="js/core/config.js"></script>
+    <script src="js/core/app.js"></script>
+
+    <script src="js/components/header.js"></script>
+<!-- ==========================================================
+     CATEGORIAS
+========================================================== -->
+
+<section class="categorias">
+
+    <div class="container">
+
+        <div class="categorias-header">
+
+            <span class="categoria-tag">
+                NOSSAS CATEGORIAS
+            </span>
+
+            <h2>
+                Encontre o que procura
+            </h2>
+
+            <p>
+                Produtos criados com carinho para organizar, decorar
+                e tornar momentos especiais ainda mais inesquecíveis.
+            </p>
+
+        </div>
+
+        <div class="categorias-grid">
+
+            <!-- CARD PRINCIPAL -->
+
+            <a href="pages/catalogo.html?categoria=etiquetas"
+               class="categoria-principal">
+
+                <img
+                    src="assets/images/categorias/etiquetas.webp"
+                    alt="Etiquetas Personalizadas">
+
+                <div class="categoria-overlay">
+
+                    <span class="categoria-badge">
+                        MAIS VENDIDO
+                    </span>
+
+                    <h3>
+                        Etiquetas Personalizadas
+                    </h3>
+
+                    <p>
+                         Organização, praticidade e muito mais estilo para o material escolar.
+                    </p>
+
+                    <strong>
+                        Comprar agora →
+                    </strong>
+
+                </div>
+
+            </a>
+
+            <!-- COLUNA DIREITA -->
+
+            <a href="#" class="categoria-card">
+
+                <img
+                    src="assets/images/categorias/escolar.webp"
+                    alt="Escolar">
+
+                <div class="categoria-overlay">
+
+                    <h3>Volta às Aulas</h3>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="categoria-card">
+
+                <img
+                    src="assets/images/categorias/personalizados.webp"
+                    alt="Personalizados">
+
+                <div class="categoria-overlay">
+
+                    <h3>Presentes Criativos</h3>
+
+                </div>
+
+            </a>
+
+            <a href="#" class="categoria-card">
+
+                <img
+                    src="assets/images/categorias/novidades.webp"
+                    alt="Novidades">
+
+                <div class="categoria-overlay">
+
+                    <h3>Lançamentos</h3>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</body>
+
+</html>

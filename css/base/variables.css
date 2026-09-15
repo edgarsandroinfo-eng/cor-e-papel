@@ -1,0 +1,78 @@
+/**
+==========================================================
+Projeto : Cor & Papel
+Arquivo : variables.css
+Versão  : 0.1.0
+
+Descrição:
+Arquivo responsável pelas variáveis globais do projeto.
+
+Todas as cores, fontes, tamanhos, espaçamentos,
+bordas e sombras deverão ser definidos aqui.
+
+Nenhuma cor fixa deverá ser utilizada em outros arquivos CSS.
+
+==========================================================
+*/
+
+:root{
+
+    /* =====================================================
+       CORES PRINCIPAIS
+    ===================================================== */
+
+    --color-primary: #E91E63;
+    --color-primary-light: #F8BBD0;
+
+    --color-secondary: #29B6F6;
+    --color-secondary-light: #B3E5FC;
+
+    --color-success: #8BC34A;
+
+    --color-white: #FFFFFF;
+
+    --color-background: #FFF9FB;
+
+    --color-text: #444444;
+
+    --color-title: #222222;
+
+    --color-border: #EAEAEA;
+
+    /* =====================================================
+       FONTES
+    ===================================================== */
+
+    /*--font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif; */
+
+
+        /* =====================================================
+            FONTES
+           ===================================================== */
+
+         --font-family: "Nunito Sans", sans-serif;
+
+    /* =====================================================
+       TAMANHOS
+    ===================================================== */
+
+    --container-width: 1200px;
+
+    --radius-small:8px;
+
+    --radius-medium:16px;
+
+    --radius-large:30px;
+
+    /* =====================================================
+       SOMBRAS
+    ===================================================== */
+
+    --shadow-default:
+        0px 8px 20px rgba(0,0,0,.08);
+
+}

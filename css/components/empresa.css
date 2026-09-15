@@ -1,0 +1,165 @@
+/* =========================================
+   PÁGINA: NOSSA HISTÓRIA
+========================================= */
+
+/* Área principal da página */
+.empresa {
+    padding: 64px 24px;
+}
+
+/* Conteúdo centralizado e limitado em largura */
+.empresa-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* =========================================
+   TEXTO
+========================================= */
+
+.empresa-conteudo {
+    min-width: 0;
+}
+
+.empresa-subtitulo {
+    margin-bottom: 12px;
+
+    color: #e66b91;
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.empresa-conteudo h1 {
+    margin-bottom: 28px;
+
+    color: #49352f;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    line-height: 1.1;
+}
+
+.empresa-conteudo p:not(.empresa-subtitulo) {
+    margin-bottom: 20px;
+
+    color: #4a4a4a;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+/* =========================================
+   FOTO
+========================================= */
+
+.empresa-imagem {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.empresa-imagem img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* =========================================
+   DESKTOP
+========================================= */
+
+@media (min-width: 768px) {
+
+    .empresa {
+        padding: 80px 32px;
+    }
+
+    .empresa-container {
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        gap: 64px;
+    }
+
+    .empresa-imagem {
+        max-width: 420px;
+        margin: 0;
+        justify-self: end;
+    }
+
+}
+
+/* =========================================
+   TELAS PEQUENAS
+========================================= */
+
+@media (max-width: 480px) {
+
+    .empresa {
+        padding: 40px 20px;
+    }
+
+    .empresa-container {
+        gap: 28px;
+    }
+
+    .empresa-conteudo h1 {
+        margin-bottom: 22px;
+    }
+
+    .empresa-conteudo p:not(.empresa-subtitulo) {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+
+}
+
+/* AJUSTES DE LAYOUT DA PÁGINA NOSSA HISTÓRIA */
+
+/* Esconde o subtítulo "Sobre nós" */
+.empresa-subtitulo {
+    display: none;
+}
+
+/* Diminui o espaço entre o cabeçalho e o conteúdo */
+.empresa {
+    padding-top: 24px;
+}
+
+/* O botão do menu mobile não aparece no desktop */
+#header .menu-toggle {
+    display: none;
+}
+
+/* Alinha o texto com o topo da imagem */
+.empresa-container {
+    align-items: start;
+}
+
+/* Reduz um pouco a largura da imagem */
+.empresa-imagem {
+    max-width: 360px;
+}
+
+/* Ajustes para telas de celular */
+@media (max-width: 768px) {
+    .empresa {
+        padding-top: 16px;
+    }
+
+    #header .menu-toggle {
+        display: flex;
+    }
+
+    .empresa-imagem {
+        max-width: 320px;
+    }
+}

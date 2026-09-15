@@ -1,0 +1,84 @@
+/**
+ * ==========================================================
+ * Projeto.....: Cor & Papel
+ * Arquivo.....: global.css
+ * Versão......: 0.1.0
+ * ----------------------------------------------------------
+ * Descrição:
+ * Estilos globais utilizados em todas as páginas do site.
+ * ==========================================================
+ */
+
+/* ===========================
+   BODY
+=========================== */
+
+body{
+
+    font-family: var(--font-family);
+
+    background: var(--color-background);
+
+    color: var(--color-text);
+
+}
+
+/* ===========================
+   IMAGENS
+=========================== */
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+/* ===========================
+   LINKS
+=========================== */
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+/* ===========================
+   LISTAS
+=========================== */
+
+ul{
+
+    list-style:none;
+
+}
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+button{
+
+    border:none;
+
+    background:none;
+
+    cursor:pointer;
+
+}
+
+/* ===========================
+   CONTAINER PADRÃO
+=========================== */
+
+.container{
+
+    width:min(1200px, 92%);
+
+    margin:auto;
+
+}

@@ -1,0 +1,749 @@
+/* ==========================================================
+   PÁGINA DE CONTATO
+   Define a largura máxima e o espaçamento da área principal.
+========================================================== */
+
+.contato {
+    max-width: 1100px; /* Impede que a seção fique larga demais em telas grandes. */
+    margin: 0 auto; /* Centraliza a seção horizontalmente. */
+    padding: 48px 24px; /* Espaçamento interno: 48px em cima/baixo e 24px nas laterais. */
+}
+
+/* ==========================================================
+   PÁGINA DE CONTATO
+   Este bloco já aparece anteriormente no arquivo.
+   Foi mantido para não alterar o código original.
+========================================================== */
+
+.contato {
+    max-width: 1100px; /* Largura máxima da seção. */
+    margin: 0 auto; /* Centraliza a seção. */
+    padding: 48px 24px; /* Espaçamento interno. */
+}
+
+/* Espaçamento abaixo do título principal. */
+.contato h1 {
+    margin-bottom: 12px;
+}
+
+/* Espaçamento e altura das linhas do texto introdutório. */
+.contato > p {
+    margin-bottom: 32px; /* Distância entre a introdução e os cartões. */
+    line-height: 1.6; /* Aumenta o espaço entre as linhas do parágrafo. */
+}
+
+/* ==========================================================
+   CARTÕES DE CONTATO
+========================================================== */
+
+/* Organiza os cartões em uma grade. */
+.contato-opcoes {
+    display: grid; /* Ativa o sistema de layout Grid. */
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Cria duas colunas de mesma largura. */
+    gap: 20px; /* Espaço entre os cartões. */
+}
+
+/* Estilo geral dos cartões que são links. */
+.contato-opcoes a.contato-card {
+    display: flex; /* Ativa o layout Flexbox. */
+    flex-direction: column; /* Organiza os elementos em coluna. */
+    align-items: flex-start; /* Alinha os elementos à esquerda. */
+    gap: 8px; /* Espaço entre os elementos internos. */
+
+    min-width: 0; /* Permite que o conteúdo encolha sem forçar a largura do cartão. */
+    padding: 24px; /* Espaçamento interno do cartão. */
+
+    border: 1px solid #f0dce5; /* Borda fina em tom rosa-claro. */
+    border-radius: 14px; /* Arredonda os cantos do cartão. */
+    background: #ffffff; /* Fundo branco. */
+
+    color: inherit; /* Usa a cor de texto herdada do elemento pai. */
+    text-decoration: none; /* Remove o sublinhado padrão dos links. */
+
+    transition:
+        transform 0.2s ease, /* Suaviza mudanças de posição. */
+        box-shadow 0.2s ease, /* Suaviza mudanças na sombra. */
+        border-color 0.2s ease; /* Suaviza mudanças na cor da borda. */
+}
+
+/* Ícone pequeno de cada cartão. */
+.contato-card .contato-icone {
+    display: grid; /* Usa Grid para posicionar o ícone. */
+    place-items: center; /* Centraliza o ícone horizontal e verticalmente. */
+
+    width: 48px; /* Largura da área do ícone. */
+    height: 48px; /* Altura da área do ícone. */
+    margin-bottom: 8px; /* Espaço abaixo do ícone. */
+
+    border-radius: 14px; /* Arredonda o fundo do ícone. */
+    font-size: 30px; /* Tamanho de fonte, caso o ícone use texto. */
+    font-weight: 600; /* Peso da fonte, caso o ícone use texto. */
+}
+
+/* Nome do tipo de contato, como WhatsApp ou Instagram. */
+.contato-card .contato-tipo {
+    color: #777777; /* Cinza para diferenciar o texto auxiliar. */
+    font-size: 14px; /* Tamanho da fonte. */
+}
+
+/* Número, usuário ou endereço destacado no cartão. */
+.contato-card strong {
+    max-width: 100%; /* Impede que o texto ultrapasse a largura disponível. */
+    overflow-wrap: anywhere; /* Permite quebrar textos longos, como e-mails. */
+    font-size: 17px; /* Tamanho do texto em destaque. */
+}
+
+/* Texto auxiliar que aparece abaixo do contato. */
+.contato-card small {
+    color: #777777; /* Cor cinza. */
+    font-size: 13px; /* Tamanho menor que o texto principal. */
+    line-height: 1.5; /* Espaçamento entre linhas. */
+}
+
+/* Cores específicas do ícone do WhatsApp. */
+.contato-card.whatsapp .contato-icone {
+    color: #128c4a; /* Cor do desenho ou texto do ícone. */
+    background: #e5f7ed; /* Fundo verde-claro. */
+}
+
+/* Cores específicas do ícone do Instagram. */
+.contato-card.instagram .contato-icone {
+    color: #b83280; /* Cor do desenho ou texto do ícone. */
+    background: #fce8f2; /* Fundo rosa-claro. */
+}
+
+/* Cores específicas do ícone de e-mail. */
+.contato-card.email .contato-icone {
+    color: #5274b8; /* Cor do desenho ou texto do ícone. */
+    background: #eaf0fc; /* Fundo azul-claro. */
+}
+
+/* Cores específicas do ícone de telefone. */
+.contato-card.telefone .contato-icone {
+    color: #b87927; /* Cor do desenho ou texto do ícone. */
+    background: #fff2df; /* Fundo bege-claro. */
+}
+
+/* Efeito visual quando o ponteiro do mouse passa sobre um cartão. */
+.contato-opcoes a.contato-card:hover {
+    transform: translateY(-3px); /* Move o cartão 3px para cima. */
+    border-color: #e8b7cc; /* Muda a cor da borda. */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); /* Adiciona uma sombra suave. */
+}
+
+/* Destaque visual quando o cartão recebe foco pelo teclado. */
+.contato-opcoes a.contato-card:focus-visible,
+.btn-rota:focus-visible {
+    outline: 3px solid #e85b91; /* Desenha um contorno rosa ao redor do elemento. */
+    outline-offset: 4px; /* Afasta o contorno um pouco do elemento. */
+}
+
+/* ==========================================================
+   LOCALIZAÇÃO
+========================================================== */
+
+/* Espaço entre os cartões e a seção de localização. */
+.contato-localizacao {
+    margin-top: 48px;
+}
+
+/* Título da seção de localização. */
+.contato-localizacao h2 {
+    margin-bottom: 12px; /* Espaço abaixo do título. */
+    font-size: 26px; /* Tamanho do título. */
+}
+
+/* Parágrafo que contém o endereço. */
+.contato-localizacao p {
+    margin-bottom: 18px; /* Espaço abaixo do endereço. */
+    line-height: 1.6; /* Espaçamento entre linhas. */
+}
+
+/* Botão que abre o Google Maps para traçar uma rota. */
+.btn-rota {
+    display: inline-block; /* Permite aplicar dimensões e espaçamentos ao link. */
+    margin-bottom: 20px; /* Espaço entre o botão e o mapa. */
+    padding: 12px 20px; /* Espaçamento interno do botão. */
+
+    border-radius: 8px; /* Arredonda os cantos. */
+    background: #e85b91; /* Fundo rosa. */
+
+    color: #ffffff; /* Texto branco. */
+    font-weight: 600; /* Texto seminegrito. */
+    text-decoration: none; /* Remove o sublinhado do link. */
+
+    transition: background 0.2s ease; /* Suaviza a mudança de cor do fundo. */
+}
+
+/* Cor do botão quando o ponteiro passa sobre ele. */
+.btn-rota:hover {
+    background: #d84980;
+}
+
+/* Contêiner que define o tamanho e a aparência externa do mapa. */
+.mapa-contato {
+    width: 100%; /* Ocupa toda a largura disponível. */
+    height: 380px; /* Define a altura do mapa. */
+    overflow: hidden; /* Esconde partes que ultrapassem os limites do contêiner. */
+
+    border: 1px solid #f0dce5; /* Borda rosa-claro. */
+    border-radius: 12px; /* Arredonda os cantos do mapa. */
+}
+
+/* Elemento iframe que carrega o mapa externo. */
+.mapa-contato iframe {
+    display: block; /* Remove o espaço extra que pode existir em elementos inline. */
+    width: 100%; /* Ocupa toda a largura do contêiner. */
+    height: 100%; /* Ocupa toda a altura do contêiner. */
+    border: 0; /* Remove a borda padrão do iframe. */
+}
+
+/* ==========================================================
+   CELULARES
+   Regras aplicadas quando a tela tem até 600px de largura.
+========================================================== */
+
+@media (max-width: 600px) {
+    .contato {
+        padding: 32px 16px; /* Reduz o espaçamento interno em telas pequenas. */
+    }
+
+    .contato-opcoes {
+        grid-template-columns: 1fr; /* Coloca os cartões em uma única coluna. */
+        gap: 14px; /* Reduz o espaço entre os cartões. */
+    }
+
+    .contato-opcoes a.contato-card {
+        padding: 20px; /* Reduz o espaço interno dos cartões. */
+    }
+
+    .contato-localizacao {
+        margin-top: 36px; /* Reduz o espaço antes da localização. */
+    }
+
+    .mapa-contato {
+        height: 300px; /* Reduz a altura do mapa em celulares. */
+    }
+}
+
+/* ==========================================================
+   TRECHOS REPETIDOS DO ARQUIVO ORIGINAL
+   Estes estilos aparecem novamente mais abaixo.
+   Foram mantidos sem remoção ou reorganização.
+========================================================== */
+
+/* Regras repetidas para os cartões. */
+.contato-opcoes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+/* Estilo repetido para os links dentro da área de cartões. */
+.contato-opcoes a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    padding: 24px;
+    border: 1px solid #f0dce5;
+    border-radius: 12px;
+    background: #ffffff;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Estilo repetido para spans dentro dos links dos cartões. */
+.contato-opcoes a span {
+    color: #777;
+    font-size: 14px;
+}
+
+/* Estilo repetido para textos fortes dentro dos links. */
+.contato-opcoes a strong {
+    overflow-wrap: anywhere;
+    font-size: 17px;
+}
+
+/* Efeito repetido ao passar o mouse sobre os links. */
+.contato-opcoes a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Regras repetidas para celulares. */
+@media (max-width: 600px) {
+    .contato {
+        padding: 32px 16px;
+    }
+
+    .contato-opcoes {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .contato-opcoes a {
+        padding: 20px;
+    }
+}
+
+/* ==========================================================
+   LOCALIZAÇÃO
+   Bloco repetido no arquivo original.
+========================================================== */
+
+.contato-localizacao {
+    margin-top: 48px;
+}
+
+.contato-localizacao h2 {
+    margin-bottom: 12px;
+    font-size: 26px;
+}
+
+.contato-localizacao p {
+    margin-bottom: 18px;
+    line-height: 1.6;
+}
+
+/* Botão de rota — regras repetidas. */
+.btn-rota {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #e85b91;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* Efeito do botão de rota — regra repetida. */
+.btn-rota:hover {
+    background: #d84980;
+}
+
+/* Mapa — regras repetidas. */
+.mapa-contato {
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+    border: 1px solid #f0dce5;
+    border-radius: 12px;
+}
+
+/* iframe do mapa — regras repetidas. */
+.mapa-contato iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Ajustes repetidos da localização em celulares. */
+@media (max-width: 600px) {
+    .contato-localizacao {
+        margin-top: 36px;
+    }
+
+    .mapa-contato {
+        height: 300px;
+    }
+}
+
+/* ==========================================================
+   ÍCONES SVG DOS CARTÕES
+========================================================== */
+
+/* Define o tamanho e o estilo básico dos desenhos SVG pequenos. */
+.contato-card .contato-icone svg {
+    width: 28px; /* Largura do SVG. */
+    height: 28px; /* Altura do SVG. */
+    fill: none; /* Não preenche as formas por padrão. */
+    stroke: currentColor; /* Usa a cor definida no ícone ou herdada. */
+    stroke-width: 1.8; /* Espessura das linhas. */
+    stroke-linecap: round; /* Deixa as pontas das linhas arredondadas. */
+    stroke-linejoin: round; /* Deixa os encontros das linhas arredondados. */
+}
+
+/* Ajusta o preenchimento do último caminho do ícone do WhatsApp. */
+.contato-card.whatsapp .contato-icone svg path:last-child {
+    fill: currentColor; /* Preenche o desenho usando a cor atual. */
+    stroke: none; /* Remove o contorno desse caminho. */
+}
+
+/* Ajusta o pequeno ponto do ícone do Instagram. */
+.contato-card.instagram .contato-icone svg .icone-ponto {
+    fill: currentColor; /* Preenche o ponto com a cor atual. */
+    stroke: none; /* Remove o contorno do ponto. */
+}
+
+/* ==========================================================
+   ILUSTRAÇÃO DECORATIVA DO CARTÃO WHATSAPP
+========================================================== */
+
+/* Organiza o cartão do WhatsApp em duas colunas:
+   conteúdo textual à esquerda e ilustração à direita. */
+.contato-opcoes a.contato-card.whatsapp {
+    display: grid; /* Ativa o layout Grid. */
+    grid-template-columns: minmax(0, 1fr) 180px; /* Coluna flexível para o texto e coluna de 180px para a ilustração. */
+    align-items: center; /* Centraliza os itens verticalmente. */
+    gap: 12px; /* Espaço entre texto e ilustração. */
+    padding: 24px; /* Espaçamento interno. */
+    overflow: hidden; /* Esconde partes da ilustração que ultrapassem o cartão. */
+}
+
+/* Organiza verticalmente o conteúdo textual dos cartões ilustrados. */
+.contato-card-conteudo {
+    display: flex; /* Ativa Flexbox. */
+    flex-direction: column; /* Coloca os elementos em coluna. */
+    align-items: flex-start; /* Alinha os elementos à esquerda. */
+    gap: 8px; /* Espaço entre os elementos. */
+    min-width: 0; /* Permite que o conteúdo encolha quando necessário. */
+}
+
+/* Tamanho e posicionamento da ilustração do WhatsApp. */
+.contato-ilustracao-whatsapp {
+    display: block; /* Faz o SVG se comportar como bloco. */
+    width: 100%; /* Usa a largura disponível. */
+    max-width: 180px; /* Limita a largura máxima. */
+    justify-self: end; /* Encosta a ilustração à direita da coluna. */
+}
+
+/* Cor de fundo da ilustração do WhatsApp. */
+.ilustracao-fundo {
+    fill: #fcecf3;
+}
+
+/* Aparência dos balões de mensagem brancos. */
+.balao-borda {
+    fill: #ffffff;
+    stroke: #e8b6cc;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+/* Aparência do balão de mensagem verde. */
+.balao-verde {
+    fill: #e5f7ed;
+    stroke: #a6d8b9;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+/* Linhas que representam texto no balão branco. */
+.linha-mensagem {
+    fill: none;
+    stroke: #d8a4bb;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+/* Linhas que representam texto no balão verde. */
+.linha-mensagem-verde {
+    fill: none;
+    stroke: #8bc9a3;
+    stroke-width: 4;
+    stroke-linecap: round;
+}
+
+/* Círculo de fundo do coração decorativo. */
+.coracao-fundo {
+    fill: #f9dce9;
+}
+
+/* Cor do coração decorativo. */
+.coracao {
+    fill: #e85b91;
+}
+
+/* Ajustes da ilustração do WhatsApp em celulares. */
+@media (max-width: 600px) {
+    .contato-opcoes a.contato-card.whatsapp {
+        grid-template-columns: minmax(0, 1fr) 140px; /* Reduz a coluna da ilustração. */
+        gap: 8px; /* Diminui o espaço entre texto e ilustração. */
+        padding: 20px; /* Reduz o espaçamento interno. */
+    }
+
+    .contato-ilustracao-whatsapp {
+        max-width: 140px; /* Reduz a largura máxima da ilustração. */
+    }
+}
+
+/* ==========================================================
+   ILUSTRAÇÃO DECORATIVA DO CARTÃO INSTAGRAM
+========================================================== */
+
+/* Organiza o cartão do Instagram em texto e ilustração. */
+.contato-opcoes a.contato-card.instagram {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    overflow: hidden;
+}
+
+/* Tamanho e posicionamento da ilustração do Instagram. */
+.contato-ilustracao-instagram {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    justify-self: end;
+}
+
+/* Fundo da ilustração do Instagram. */
+.insta-fundo {
+    fill: #fcecf3;
+}
+
+/* Cartão que representa uma publicação. */
+.insta-cartao {
+    fill: #ffffff;
+    stroke: #e8b6cc;
+    stroke-width: 2;
+}
+
+/* Fundo da área da foto. */
+.insta-foto {
+    fill: #f9e5ef;
+}
+
+/* Cor do sol da paisagem. */
+.insta-sol {
+    fill: #f3c4a2;
+}
+
+/* Cor das montanhas da paisagem. */
+.insta-montanha {
+    fill: #b9d9c8;
+}
+
+/* Linhas decorativas da publicação. */
+.insta-linha {
+    fill: none;
+    stroke: #d8a4bb;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+/* Fundo do coração decorativo. */
+.insta-coracao-fundo {
+    fill: #f9dce9;
+}
+
+/* Cor do coração decorativo. */
+.insta-coracao {
+    fill: #e85b91;
+}
+
+/* Aparência dos brilhos decorativos. */
+.insta-brilho {
+    fill: none;
+    stroke: #e8a9c2;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+/* Ajustes da ilustração do Instagram em celulares. */
+@media (max-width: 600px) {
+    .contato-opcoes a.contato-card.instagram {
+        grid-template-columns: minmax(0, 1fr) 140px;
+        gap: 8px;
+        padding: 20px;
+    }
+
+    .contato-ilustracao-instagram {
+        max-width: 140px;
+    }
+}
+
+/* ==========================================================
+   ILUSTRAÇÃO DECORATIVA DO CARTÃO E-MAIL
+========================================================== */
+
+/* Organiza o cartão de e-mail em texto e ilustração. */
+.contato-opcoes a.contato-card.email {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    overflow: hidden;
+}
+
+/* Tamanho e posicionamento da ilustração de e-mail. */
+.contato-ilustracao-email {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    justify-self: end;
+}
+
+/* Fundo da ilustração de e-mail. */
+.email-fundo {
+    fill: #fcecf3;
+}
+
+/* Folha de papel ao fundo. */
+.email-papel {
+    fill: #fffdfd;
+    stroke: #e8b6cc;
+    stroke-width: 2;
+}
+
+/* Linhas que representam texto na folha. */
+.email-papel-linha {
+    fill: none;
+    stroke: #e8b6cc;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+/* Envelope em primeiro plano. */
+.email-envelope {
+    fill: #f8dce9;
+    stroke: #d99bb8;
+    stroke-width: 2;
+}
+
+/* Linhas que representam a dobra do envelope. */
+.email-envelope-detalhe {
+    fill: none;
+    stroke: #d99bb8;
+    stroke-width: 2;
+    stroke-linejoin: round;
+}
+
+/* Fundo do coração decorativo. */
+.email-coracao-fundo {
+    fill: #f9dce9;
+}
+
+/* Cor do coração decorativo. */
+.email-coracao {
+    fill: #e85b91;
+}
+
+/* Aparência dos brilhos decorativos. */
+.email-brilho {
+    fill: none;
+    stroke: #e8a9c2;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+/* Cor do pequeno ponto decorativo. */
+.email-brilho-ponto {
+    fill: #e8a9c2;
+}
+
+/* Ajustes da ilustração de e-mail em celulares. */
+@media (max-width: 600px) {
+    .contato-opcoes a.contato-card.email {
+        grid-template-columns: minmax(0, 1fr) 140px;
+        gap: 8px;
+        padding: 20px;
+    }
+
+    .contato-ilustracao-email {
+        max-width: 140px;
+    }
+}
+
+/* ==========================================================
+   ILUSTRAÇÃO DECORATIVA DO CARTÃO TELEFONE
+========================================================== */
+
+/* Organiza o cartão de telefone em texto e ilustração. */
+.contato-opcoes a.contato-card.telefone {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 180px;
+    align-items: center;
+    gap: 12px;
+    padding: 24px;
+    overflow: hidden;
+}
+
+/* Tamanho e posicionamento da ilustração do telefone. */
+.contato-ilustracao-telefone {
+    display: block;
+    width: 100%;
+    max-width: 180px;
+    justify-self: end;
+}
+
+/* Fundo da ilustração do telefone. */
+.telefone-fundo {
+    fill: #fcecf3;
+}
+
+/* Corpo do aparelho celular ilustrado. */
+.telefone-aparelho {
+    fill: #ffffff;
+    stroke: #e8b6cc;
+    stroke-width: 2;
+}
+
+/* Área da tela do aparelho. */
+.telefone-tela {
+    fill: #f9e5ef;
+}
+
+/* Linhas que representam conteúdo na tela. */
+.telefone-linha {
+    fill: none;
+    stroke: #d8a4bb;
+    stroke-width: 3;
+    stroke-linecap: round;
+}
+
+/* Pequeno detalhe na parte inferior do aparelho. */
+.telefone-bolinha {
+    fill: #d8a4bb;
+}
+
+/* Fundo do coração decorativo. */
+.telefone-coracao-fundo {
+    fill: #f9dce9;
+}
+
+/* Cor do coração decorativo. */
+.telefone-coracao {
+    fill: #e85b91;
+}
+
+/* Aparência dos brilhos decorativos. */
+.telefone-brilho {
+    fill: none;
+    stroke: #e8a9c2;
+    stroke-width: 2;
+    stroke-linecap: round;
+}
+
+/* Cor do pequeno ponto decorativo. */
+.telefone-brilho-ponto {
+    fill: #e8a9c2;
+}
+
+/* Ajustes da ilustração do telefone em celulares. */
+@media (max-width: 600px) {
+    .contato-opcoes a.contato-card.telefone {
+        grid-template-columns: minmax(0, 1fr) 140px;
+        gap: 8px;
+        padding: 20px;
+    }
+
+    .contato-ilustracao-telefone {
+        max-width: 140px;
+    }
+}
+
+/* Centraliza o título e o parágrafo introdutório da página. */
+.contato h1,
+.contato > p {
+    text-align: center;
+}

@@ -1,0 +1,63 @@
+/**
+ * ==========================================================
+ * Projeto.....: Cor & Papel
+ * Arquivo.....: reset.css
+ * Versão......: 0.1.0
+ * ----------------------------------------------------------
+ * Descrição:
+ * Remove estilos padrões dos navegadores para garantir
+ * consistência visual em todas as plataformas.
+ * ==========================================================
+ */
+
+/* Reset Global */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* HTML */
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* Body */
+
+body{
+    min-height: 100vh;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Formulários */
+
+input,
+button,
+textarea,
+select{
+    font: inherit;
+}
+
+/* Imagens */
+
+img,
+picture{
+    display: block;
+    max-width: 100%;
+}
+
+/* Listas */
+
+ul,
+ol{
+    list-style: none;
+}
+
+/* Links */
+
+a{
+    text-decoration: none;
+}

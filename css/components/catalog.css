@@ -1,0 +1,192 @@
+/**
+ * ==========================================================
+ * Projeto.....: Cor & Papel
+ * Arquivo.....: catalog.css
+ * ----------------------------------------------------------
+ * Estilos da página de catálogo
+ * ==========================================================
+ */
+
+"use strict";
+
+
+/* ==========================================================
+   CATÁLOGO
+========================================================== */
+
+#catalog{
+
+    padding-top:40px;
+
+}
+
+/* ==========================================================
+   CATÁLOGO
+========================================================== */
+
+#catalog {
+
+    padding: 50px 0;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.kit-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+
+    gap: 25px;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.kit-card {
+
+    background: #FFF;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+
+    transition: .25s;
+
+}
+
+/* ==========================================================
+   LINK
+========================================================== */
+
+.kit-card a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+/* ==========================================================
+   IMAGEM
+========================================================== */
+
+.kit-image {
+
+    overflow: hidden;
+
+}
+
+.kit-image img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+/* ==========================================================
+   INFORMAÇÕES
+========================================================== */
+
+.kit-info{
+
+    padding:15px 18px 12px;
+
+    text-align:center;
+
+}
+
+.kit-info span{
+
+    display:block;
+
+    font-size:13px;
+
+    color:#999;
+
+    text-transform:uppercase;
+
+    letter-spacing:5px;
+
+    font-weight:500;
+
+}
+
+.kit-info h2{
+
+    margin-top:10px;
+
+    margin-bottom:10px;
+
+    font-size:25px;
+
+    line-height:1;
+
+    color:var(--color-primary);
+
+    transition:.30s;
+
+    font-family: "Nunito", sans-serif;
+    
+    font-weight: 800;
+
+}
+
+@media (max-width: 600px) {
+    .kit-info h2 {
+        font-size: 30px;
+    }
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.kit-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 40px rgba(0,0,0,.18);
+
+}
+
+
+.kit-card:hover h2{
+
+    transform:scale(1.08);
+
+}
+
+.kit-card:hover .kit-link{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+.kit-link{
+
+    color:var(--color-primary);
+
+    font-size:14px;
+
+    font-weight:600;
+
+    opacity:0;
+
+    transform:translateY(10px);
+
+    transition:.30s;
+
+}
+

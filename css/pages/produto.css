@@ -1,0 +1,333 @@
+/**
+ * ==========================================================
+ * Página do Produto
+ * ==========================================================
+ */
+
+body {
+    font-family: "Nunito", sans-serif;
+}
+
+
+#produto{
+
+    padding:10px 0 80px;
+
+    background:#FFF9FB;
+
+}
+
+/* ==========================================================
+   TÍTULO
+========================================================== */
+
+.produto-titulo {
+    text-align: center;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.produto-titulo h1{
+
+    font-size:2.4rem;
+
+    color:#C94F7C;
+
+}
+
+/* ==========================================================
+   CONTEÚDO
+========================================================== */
+
+.produto-content{
+
+    display:grid;
+
+    grid-template-columns:480px 390px;
+
+    gap:35px;
+
+    justify-content:center;
+
+    align-items:stretch;
+
+}
+/* ==========================================================
+   IMAGEM
+========================================================== */
+
+
+
+/* ==========================================================
+   CARD DA IMAGEM
+========================================================== */
+
+.produto-card-imagem{
+
+    background:#FFF;
+
+    border-radius:20px;
+
+    padding:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+    display:flex;
+
+}
+
+.produto-imagem{
+
+    width:100%;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.produto-imagem img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+/* ==========================================================
+   CARD LATERAL
+========================================================== */
+
+.produto-card{
+
+    background:#FFF;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.10);
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    text-align:center;
+
+}
+
+#btn-whatsapp{
+
+    margin-top:auto;
+
+}
+
+.produto-card h2{
+
+    color:#5A3E4B;
+
+    margin-bottom:15px;
+
+}
+
+.produto-card p{
+
+    color:#666;
+
+    margin-bottom:20px;
+
+}
+
+.codigo-card{
+
+    width:120px;
+
+    margin:20px auto 30px;
+
+    background:#FDEAF2;
+
+    color:#C94F7C;
+
+    font-size:2.2rem;
+
+    font-weight:bold;
+
+    padding:15px;
+
+    border-radius:15px;
+
+}
+
+.produto-card ul{
+
+    list-style:none;
+
+    display:inline-block;
+
+    text-align:left;
+
+    padding:0;
+
+    margin:0 0 35px;
+
+}
+
+.produto-card li{
+
+    margin-bottom:12px;
+
+    color:#555;
+
+}
+
+/* ==========================================================
+   BOTÃO
+========================================================== */
+
+#btn-whatsapp{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    background:#25D366;
+
+    color:#FFF;
+
+    text-decoration:none;
+
+    padding:14px 26px;
+
+    border-radius:40px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+    box-shadow:0 8px 20px rgba(37,211,102,.25);
+
+}
+
+#btn-whatsapp:hover{
+
+    background:#1EBE5D;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 12px 28px rgba(37,211,102,.35);
+
+}
+
+#btn-whatsapp:hover{
+
+    background:#1EBE5D;
+
+    transform:translateY(-3px);
+
+}
+
+/* ==========================================================
+   ZOOM
+========================================================== */
+
+.zoom-container{
+
+    display:flex;
+
+    overflow:hidden;
+
+    cursor:zoom-in;
+
+}
+
+.zoom-container img{
+
+    width:100%;
+
+    display:block;
+
+    transition:transform .15s ease;
+
+    transform-origin:center center;
+
+}
+
+@media (max-width:900px){
+
+    .produto-content{
+
+        grid-template-columns:1fr;
+
+        justify-items:center;
+
+    }
+
+    .produto-card-imagem,
+    .produto-card{
+
+        width:100%;
+        max-width:480px;
+
+    }
+
+}
+
+    .produto-imagem{
+
+        width:100%;
+
+        max-width:430px;
+
+    }
+
+    .produto-card{
+
+        width:100%;
+
+        max-width:340px;
+
+    }
+
+}
+
+/* ==========================================================
+   TOUCH ZOOM (Mobile)
+========================================================== */
+
+.zoom-container{
+
+    touch-action:none;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+.zoom-container img{
+
+    transform-origin:center center;
+
+    transition:transform .15s ease;
+
+    will-change:transform;
+
+    user-select:none;
+
+    -webkit-user-drag:none;
+
+}
+
+.codigo-interno {
+    display: none;
+}
