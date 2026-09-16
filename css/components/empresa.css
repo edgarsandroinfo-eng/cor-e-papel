@@ -1,34 +1,50 @@
 /* =========================================
    PÁGINA: MINHA HISTÓRIA
-========================================= */
+   ========================================= */
 
-/* Área principal da página */
+
+/* ÁREA PRINCIPAL DA PÁGINA */
+
+/* Define o espaço interno ao redor de todo o conteúdo da página.
+   64px em cima e embaixo; 24px nas laterais. */
 .empresa {
     padding: 64px 24px;
 }
 
-/* Conteúdo centralizado e limitado em largura */
+
+/* CONTAINER DO CONTEÚDO */
+
+/* Limita a largura do conteúdo a 1200px e o centraliza.
+   Usa Grid para organizar o texto e a imagem.
+   A configuração inicial tem uma coluna.
+   O espaço entre os elementos é de 40px.
+   align-items: center centraliza os itens verticalmente. */
 .empresa-container {
     max-width: 1200px;
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 1fr;
     gap: 40px;
     align-items: center;
 }
 
+
 /* =========================================
    TEXTO
-========================================= */
+   ========================================= */
 
+/* Evita que o conteúdo de texto ultrapasse
+   os limites da coluna em que está inserido. */
 .empresa-conteudo {
     min-width: 0;
 }
 
+
+/* Estilo do pequeno subtítulo "Sobre nós".
+   Define o espaço inferior, cor, tamanho, peso,
+   espaçamento entre letras e transforma o texto em maiúsculas. */
 .empresa-subtitulo {
     margin-bottom: 12px;
-
     color: #e66b91;
     font-size: 0.95rem;
     font-weight: 600;
@@ -36,130 +52,240 @@
     text-transform: uppercase;
 }
 
+
+/* Estilo do título principal h1, "Minha história".
+   Define o espaço inferior, a cor, o tamanho responsivo
+   e a altura das linhas. */
 .empresa-conteudo h1 {
     margin-bottom: 28px;
-
     color: #49352f;
-    font-size: clamp(2.4rem, 5vw, 4rem);
+    /*font-size: clamp(2.4rem, 5vw, 4rem);*/
+    font-size: 40px;
     line-height: 1.1;
 }
 
+
+/* Estilo dos parágrafos dentro do conteúdo.
+   Não aplica essas regras ao parágrafo que tem
+   a classe empresa-subtitulo. */
 .empresa-conteudo p:not(.empresa-subtitulo) {
     margin-bottom: 20px;
-
     color: #4a4a4a;
     font-size: 1.05rem;
-    line-height: 1.8;
+    line-height: 1.5;
+    text-align: justify;
 }
+
 
 /* =========================================
    FOTO
-========================================= */
+   ========================================= */
 
+/* Define a largura da área da imagem.
+   A imagem pode ocupar até 420px e fica centralizada.
+   overflow: hidden esconde o que ultrapassar os limites.
+   border-radius arredonda os cantos. */
 .empresa-imagem {
     width: 100%;
     max-width: 420px;
-    margin: 0 auto;
-
+    margin: 0;
     overflow: hidden;
-    border-radius: 18px;
+    border-radius: 30px;
+    
+    
 }
 
+
+/* Faz a imagem ocupar toda a largura disponível.
+   aspect-ratio define a proporção da imagem como 2:3.
+   object-fit: cover preenche a área, podendo cortar partes.
+   object-position: center centraliza o enquadramento. */
 .empresa-imagem img {
     display: block;
     width: 100%;
     aspect-ratio: 2 / 3;
-
     object-fit: cover;
     object-position: center;
 }
 
+
 /* =========================================
    DESKTOP
-========================================= */
+   ========================================= */
 
+/* Aplica estas regras quando a tela tiver
+   largura mínima de 768px. */
 @media (min-width: 768px) {
 
+    /* Aumenta o espaço interno da página no desktop. */
     .empresa {
         padding: 80px 32px;
     }
 
+    /* Organiza o conteúdo em duas colunas:
+       uma para o texto e outra para a imagem.
+       A coluna do texto fica proporcionalmente maior. */
     .empresa-container {
         grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
         gap: 64px;
     }
 
+    /* Define o limite da imagem no desktop.
+       Remove a margem automática e alinha a imagem
+       ao final da coluna. */
     .empresa-imagem {
         max-width: 420px;
         margin: 0;
         justify-self: end;
     }
-
 }
+
 
 /* =========================================
    TELAS PEQUENAS
-========================================= */
+   ========================================= */
 
+/* Aplica estas regras quando a tela tiver
+   largura máxima de 480px. */
 @media (max-width: 480px) {
 
+    /* Reduz o espaço interno da página no celular. */
     .empresa {
         padding: 40px 20px;
     }
 
+    /* Reduz o espaço entre os elementos do container. */
     .empresa-container {
         gap: 28px;
     }
 
+    /* Diminui o espaço abaixo do título principal. */
     .empresa-conteudo h1 {
         margin-bottom: 22px;
     }
 
+    /* Ajusta o tamanho e a altura das linhas
+       dos parágrafos para telas pequenas. */
     .empresa-conteudo p:not(.empresa-subtitulo) {
         font-size: 1rem;
         line-height: 1.7;
     }
-
 }
 
-/* AJUSTES DE LAYOUT DA PÁGINA MINHA HISTÓRIA */
 
-/* Esconde o subtítulo "Sobre nós" */
+/* =========================================
+   AJUSTES DE LAYOUT DA PÁGINA MINHA HISTÓRIA
+   ========================================= */
+
+/* Esconde o subtítulo "Sobre nós". */
 .empresa-subtitulo {
     display: none;
 }
 
-/* Diminui o espaço entre o cabeçalho e o conteúdo */
+
+/* Reduz o espaço acima da área principal da página.
+   Esta regra substitui o padding-top definido anteriormente
+   em .empresa, pois aparece depois dele no arquivo. */
 .empresa {
     padding-top: 24px;
 }
 
-/* O botão do menu mobile não aparece no desktop */
+
+/* Esconde o botão do menu mobile no desktop. */
 #header .menu-toggle {
     display: none;
 }
 
-/* Alinha o texto com o topo da imagem */
+
+/* Alinha o conteúdo do container pelo topo,
+   em vez de centralizá-lo verticalmente. */
 .empresa-container {
     align-items: start;
 }
 
-/* Reduz um pouco a largura da imagem */
+
+/* Reduz a largura máxima da imagem para 360px.
+   Esta regra substitui o max-width anterior de 420px
+   quando ambas se aplicam. */
 .empresa-imagem {
     max-width: 360px;
 }
 
-/* Ajustes para telas de celular */
+
+/* AJUSTES PARA TELAS DE CELULAR */
+
+/* Aplica estas regras quando a tela tiver
+   largura máxima de 768px. */
 @media (max-width: 768px) {
+
+    /* Reduz ainda mais o espaço acima da área principal. */
     .empresa {
         padding-top: 16px;
     }
 
+    /* Faz o botão do menu mobile aparecer
+       em telas de até 768px. */
     #header .menu-toggle {
         display: flex;
     }
 
+    /* Define a largura máxima da imagem no celular. */
     .empresa-imagem {
         max-width: 320px;
     }
+}
+
+
+/* =========================================
+   COR DO TÍTULO E DOS SUBTÍTULOS
+   ========================================= */
+
+/* Define a cor rosa #F56A9A para:
+   - h1: "Minha história"
+   - h2: "O que a empresa faz"
+   - h2: "Como faço" */
+.empresa-conteudo h1,
+.empresa-conteudo h2 {
+    color: #F56A9A;
+}
+
+/* Desloca somente a imagem para baixo no desktop */
+@media (min-width: 769px) {
+    .empresa-container .empresa-imagem {
+        position: relative;
+        top: 30px;
+    }
+}
+
+/* Lista de tópicos da página Minha História */
+.empresa-conteudo ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.empresa-conteudo li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+/* Marcador de tópico em formato de visto */
+.empresa-conteudo li::before {
+    content: "✓";
+    color: #F56A9A;
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.0;
+    flex-shrink: 0;
+}
+
+/* Codigo que determina espaço entre o final do texto e do subtitulo "O que a empresa faz" */
+.empresa-conteudo p + h2 {
+    margin-top: 40px;
+}
+
+/* Codigo que determina espaço entre o final do topico e o subtitulo*/
+.empresa-conteudo ul + h2 {
+    margin-top: 40px;
 }
