@@ -3,8 +3,11 @@
 document.addEventListener("DOMContentLoaded", () => {
 
     carregarHeader();
+    carregarFooter();
 
 });
+
+
 
 async function carregarHeader(){
 
@@ -65,6 +68,54 @@ if (lapis) {
 
     atualizarDrawerMobile();
 
+    // Esconde "Minha história" quando essa página está aberta.
+    const paginaAtual = window.location.pathname.split("/").pop();
+    const estaNaPaginaHistoria = paginaAtual === "empresa.html";
+
+    // Menu do computador
+    const linkHistoria = header.querySelector(
+        '#menu-principal a[href$="empresa.html"]'
+    );
+
+    const itemHistoria = linkHistoria?.closest("li");
+
+    if (itemHistoria) {
+        itemHistoria.style.display = estaNaPaginaHistoria ? "none" : "";
+    }
+
+    // Menu do celular
+    const linkHistoriaMobile = header.querySelector(
+        '#mobileDrawer nav a[href$="empresa.html"]'
+    );
+
+    if (linkHistoriaMobile) {
+        linkHistoriaMobile.style.display = estaNaPaginaHistoria ? "none" : "";
+    }
+
+        // Esconde "Contato" quando a página Contato está aberta.
+    const estaNaPaginaContato = paginaAtual === "contato.html";
+
+    // Menu do computador
+    const linkContato = header.querySelector(
+        '#menu-principal a[href$="contato.html"]'
+    );
+
+    const itemContato = linkContato?.closest("li");
+
+    if (itemContato) {
+        itemContato.style.display = estaNaPaginaContato ? "none" : "";
+    }
+
+    // Menu do celular
+    const linkContatoMobile = header.querySelector(
+        '#mobileDrawer nav a[href$="contato.html"]'
+    );
+
+    if (linkContatoMobile) {
+        linkContatoMobile.style.display = estaNaPaginaContato ? "none" : "";
+    }
+    
+
 /* AVISA QUE O HEADER TERMINOU DE CARREGAR */
 document.dispatchEvent(new Event("headerLoaded"));
 
@@ -73,6 +124,57 @@ document.dispatchEvent(new Event("headerLoaded"));
     catch(erro){
 
         console.error("Erro ao carregar o Header.", erro);
+
+    }
+
+}
+
+/**
+ * ==========================================================
+ * CARREGAR RODAPÉ
+ * ==========================================================
+ * Busca o arquivo footer.html e insere seu conteúdo
+ * no espaço reservado pelo elemento #footer.
+ * Também corrige o caminho da logomarca conforme a página.
+ */
+
+async function carregarFooter() {
+
+    const footer = document.querySelector("#footer");
+
+    // Se a página não tiver espaço para o rodapé, encerra.
+    if (!footer) return;
+
+    // Define os caminhos conforme a página atual.
+    const estaNaHome = !window.location.pathname.includes("/pages/");
+
+    const caminhoFooter = estaNaHome
+        ? "pages/footer.html"
+        : "footer.html";
+
+    const caminhoBase = estaNaHome ? "" : "../";
+
+    try {
+
+        const resposta = await fetch(caminhoFooter);
+
+        if (!resposta.ok) {
+            throw new Error(`Erro HTTP: ${resposta.status}`);
+        }
+
+        // Insere o HTML do rodapé na página.
+        footer.innerHTML = await resposta.text();
+
+        // Corrige o caminho da logomarca.
+        const logo = footer.querySelector(".footer-logo img");
+
+        if (logo) {
+            logo.src = `${caminhoBase}assets/images/logo/logo.png`;
+        }
+
+    } catch (erro) {
+
+        console.error("Erro ao carregar o rodapé.", erro);
 
     }
 

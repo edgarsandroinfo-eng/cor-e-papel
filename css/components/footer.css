@@ -1,0 +1,83 @@
+/*
+==========================================================
+Projeto.....: Cor & Papel
+Arquivo.....: footer.css
+Versão......: 0.1.0
+----------------------------------------------------------
+Descrição:
+Estilos do rodapé principal do site.
+==========================================================
+*/
+
+/* Fundo do rodapé: mesmo rosa do cabeçalho */
+.site-footer {
+    width: 100%;
+    background: #FFEEF3;
+    border-top: 1px solid #F4D5E0;
+}
+/* Área interna do rodapé */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 20px; /* Antes: 28px */
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px; /* Antes: 30px */
+}
+
+/* Logomarca à esquerda */
+.footer-logo {
+    flex: 0 1 110px; /* Antes: 220px */
+}
+
+.footer-logo img {
+    display: block;
+    width: 100%;
+    max-width: 100px; /* Antes: 200px */
+    height: auto;
+}
+
+/* Escritas à direita */
+.footer-text {
+    flex: 1;
+    text-align: center;
+}
+
+.footer-slogan {
+    margin: 0 0 4px;
+    color: #7A3D53;
+    font-size: 16px; /* Antes: 18px */
+    font-weight: 600;
+}
+
+.footer-copyright {
+    margin: 0;
+    color: #7A3D53;
+    font-size: 12px; /* Antes: 13px */
+}
+
+/* Ajustes para celulares */
+@media (max-width: 600px) {
+
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 9px;
+        padding: 12px 20px;
+    }
+
+    .footer-logo {
+        flex: none;
+        width: 75px; /* Antes: 150px */
+    }
+
+    .footer-text {
+        text-align: center;
+    }
+
+    .footer-slogan {
+        font-size: 14px;
+    }
+}

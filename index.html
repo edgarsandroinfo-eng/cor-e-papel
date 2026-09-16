@@ -25,25 +25,32 @@
          CSS BASE
     ============================ -->
 
-<link rel="stylesheet" href="css/base/resets.css">
-<link rel="stylesheet" href="css/base/variables.css">
-<link rel="stylesheet" href="css/base/global.css">
+    <link rel="stylesheet" href="css/base/resets.css">
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/global.css">
 
-<link rel="stylesheet" href="css/components/hero.css">
-<link rel="stylesheet" href="css/components/header.css">
+    <!-- ===========================
+         CSS DOS COMPONENTES
+    ============================ -->
 
-<!-- SEMPRE O ÚLTIMO -->
-<link rel="stylesheet" href="css/components/header-mobile.css">
-<link rel="stylesheet" href="css/components/categorias.css">
+    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/components/header.css">
+    <link rel="stylesheet" href="css/components/footer.css">
+    <link rel="stylesheet" href="css/components/categorias.css">
+
+    <!-- SEMPRE O ÚLTIMO -->
+    <link rel="stylesheet" href="css/components/header-mobile.css">
+
 </head>
 
 <body>
 
     <!-- =====================================================
-         HEADER
+         CABEÇALHO
     ====================================================== -->
 
- <header id="header"></header>
+    <header id="header"></header>
+
 
     <!-- =====================================================
          CONTEÚDO PRINCIPAL
@@ -52,68 +59,187 @@
     <main id="main">
 
         <!-- ==============================================
-             Banner Principal
+             BANNER PRINCIPAL
         =============================================== -->
 
-        <!-- ==========================================
-     BANNER PRINCIPAL
-========================================== -->
+        <section class="hero">
 
-<section class="hero">
+            <div class="container">
 
-    <div class="container">
+                <picture>
 
-        <picture>
+                    <!-- Banner para dispositivos móveis -->
+                    <source
+                        media="(max-width:768px)"
+                        srcset="assets/images/banner/banner-home-mobile.webp">
 
-            <!-- Mobile -->
-            <source
-                media="(max-width:768px)"
-                srcset="assets/images/banner/banner-home-mobile.webp">
+                    <!-- Banner para computadores -->
+                    <img
+                        src="assets/images/banner/banner-home-desktop.webp"
+                        alt="Volta às Aulas - Etiquetas Personalizadas"
+                        class="hero-banner">
 
-            <!-- Desktop -->
-            <img
-                src="assets/images/banner/banner-home-desktop.webp"
-                alt="Volta às Aulas - Etiquetas Personalizadas"
-                class="hero-banner">
+                </picture>
 
-        </picture>
+            </div>
 
-    </div>
+        </section>
 
-</section>
+
         <!-- ==============================================
-             Produtos em Destaque
+             PRODUTOS EM DESTAQUE
         =============================================== -->
 
         <section id="featured-products">
 
         </section>
 
+
         <!-- ==============================================
-             Destaque para o Catálogo
+             DESTAQUE PARA O CATÁLOGO
         =============================================== -->
 
         <section id="catalog-highlight">
 
         </section>
 
+
         <!-- ==============================================
-             Sobre a Empresa
+             SOBRE A EMPRESA
         =============================================== -->
 
         <section id="about-preview">
 
         </section>
 
+
+        <!-- ==============================================
+             CATEGORIAS
+        =============================================== -->
+
+        <section class="categorias">
+
+            <div class="container">
+
+                <div class="categorias-header">
+
+                    <span class="categoria-tag">
+                        NOSSAS CATEGORIAS
+                    </span>
+
+                    <h2>
+                        Encontre o que procura
+                    </h2>
+
+                    <p>
+                        Etiquetas, papelaria personalizada e presentes criativos,
+                        feitos com carinho para deixar cada momento ainda mais especial.
+                    </p>
+
+                </div>
+
+
+                <div class="categorias-grid">
+
+                    <!-- CARD PRINCIPAL -->
+
+                    <a href="pages/catalogo.html?categoria=etiquetas"
+                       class="categoria-principal">
+
+                        <img
+                            src="assets/images/categorias/etiquetas.webp"
+                            alt="Etiquetas Personalizadas">
+
+                        <div class="categoria-overlay">
+
+                            <span class="categoria-badge">
+                                MAIS VENDIDO
+                            </span>
+
+                            <h3>
+                                Etiquetas Personalizadas
+                            </h3>
+
+                            <p>
+                                Organização, praticidade e muito mais estilo para o material escolar.
+                            </p>
+
+                            <strong>
+                                Comprar agora →
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <!-- COLUNA DIREITA -->
+
+                    <a href="#" class="categoria-card">
+
+                        <img
+                            src="assets/images/categorias/escolar.webp"
+                            alt="Escolar">
+
+                        <div class="categoria-overlay">
+
+                            <h3>
+                                Volta às Aulas
+                            </h3>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="categoria-card">
+
+                        <img
+                            src="assets/images/categorias/personalizados.webp"
+                            alt="Personalizados">
+
+                        <div class="categoria-overlay">
+
+                            <h3>
+                                Presentes Criativos
+                            </h3>
+
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="categoria-card">
+
+                        <img
+                            src="assets/images/categorias/novidades.webp"
+                            alt="Novidades">
+
+                        <div class="categoria-overlay">
+
+                            <h3>
+                                Lançamentos
+                            </h3>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
+
 
     <!-- =====================================================
          RODAPÉ
     ====================================================== -->
 
-    <footer id="footer">
+    <footer id="footer"></footer>
 
-    </footer>
 
     <!-- ===========================
          JAVASCRIPT
@@ -121,116 +247,7 @@
 
     <script src="js/core/config.js"></script>
     <script src="js/core/app.js"></script>
-
     <script src="js/components/header.js"></script>
-<!-- ==========================================================
-     CATEGORIAS
-========================================================== -->
-
-<section class="categorias">
-
-    <div class="container">
-
-        <div class="categorias-header">
-
-            <span class="categoria-tag">
-                NOSSAS CATEGORIAS
-            </span>
-
-            <h2>
-                Encontre o que procura
-            </h2>
-
-           <p>
-    Etiquetas, papelaria personalizada e presentes criativos,
-    feitos com carinho para deixar cada momento ainda mais especial.
-</p>
-
-        </div>
-
-        <div class="categorias-grid">
-
-            <!-- CARD PRINCIPAL -->
-
-            <a href="pages/catalogo.html?categoria=etiquetas"
-               class="categoria-principal">
-
-                <img
-                    src="assets/images/categorias/etiquetas.webp"
-                    alt="Etiquetas Personalizadas">
-
-                <div class="categoria-overlay">
-
-                    <span class="categoria-badge">
-                        MAIS VENDIDO
-                    </span>
-
-                    <h3>
-                        Etiquetas Personalizadas
-                    </h3>
-
-                    <p>
-                         Organização, praticidade e muito mais estilo para o material escolar.
-                    </p>
-
-                    <strong>
-                        Comprar agora →
-                    </strong>
-
-                </div>
-
-            </a>
-
-            <!-- COLUNA DIREITA -->
-
-            <a href="#" class="categoria-card">
-
-                <img
-                    src="assets/images/categorias/escolar.webp"
-                    alt="Escolar">
-
-                <div class="categoria-overlay">
-
-                    <h3>Volta às Aulas</h3>
-
-                </div>
-
-            </a>
-
-            <a href="#" class="categoria-card">
-
-                <img
-                    src="assets/images/categorias/personalizados.webp"
-                    alt="Personalizados">
-
-                <div class="categoria-overlay">
-
-                    <h3>Presentes Criativos</h3>
-
-                </div>
-
-            </a>
-
-            <a href="#" class="categoria-card">
-
-                <img
-                    src="assets/images/categorias/novidades.webp"
-                    alt="Novidades">
-
-                <div class="categoria-overlay">
-
-                    <h3>Lançamentos</h3>
-
-                </div>
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
 
 </body>
 
