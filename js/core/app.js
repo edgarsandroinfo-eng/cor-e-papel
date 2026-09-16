@@ -22,6 +22,19 @@ async function carregarHeader(){
 
       header.innerHTML = await resposta.text();
 
+      // Esconde o link "Início" somente na página inicial
+const linkInicio = header.querySelector("#link-home");
+const itemInicio = linkInicio?.closest("li");
+const caminhoAtual = window.location.pathname;
+
+const estaNaPaginaInicial =
+    caminhoAtual.endsWith("/") ||
+    caminhoAtual.endsWith("/index.html");
+
+if (itemInicio) {
+    itemInicio.style.display = estaNaPaginaInicial ? "none" : "";
+}
+
       const estaNaHome = !window.location.pathname.includes("/pages/");
 const caminhoBase = estaNaHome ? "" : "../";
 
@@ -192,24 +205,21 @@ function atualizarMenu(){
 
     }
 
-    if(primeiroItem !== ""){
+    if (primeiroItem !== "") {
+    menu.innerHTML = `
 
-        menu.innerHTML = `
+        <li>
+            ${primeiroItem}
+        </li>
 
-            <li>
+        <li><a href="../index.html">Início</a></li>
 
-                ${primeiroItem}
+        <li><a href="#">Personalizados</a></li>
 
-            </li>
+        <li><a href="contato.html">Contato</a></li>
 
-            <li><a href="#">Personalizados</a></li>
-
-            <li><a href="${window.location.pathname.includes("/pages/") ? "contato.html" : "pages/contato.html"}">Contato</a></li>
-
-        `;
-
-    }
-
+    `;
+}
 }
 
 /**

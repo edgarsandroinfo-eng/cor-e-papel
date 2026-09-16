@@ -2,20 +2,15 @@
    CATEGORIAS
 ========================================================== */
 
-.categorias{
+.categorias {
 
-    padding:100px 0;
-
+    padding: 30px 0 72px;
 }
 
-.categorias-header{
-
-    max-width:700px;
-
-    margin:0 auto 60px;
-
-    text-align:center;
-
+.categorias-header {
+    max-width: 700px;
+    margin: 0 auto 36px;
+    text-align: center;
 }
 
 .categoria-tag{
@@ -38,14 +33,11 @@
 
 }
 
-.categorias-header h2{
-
-    font-size:42px;
-
-    color:#4B3642;
-
-    margin-bottom:18px;
-
+.categorias-header h2 {
+    font-size: 38px;
+    color: #F56A9A;
+    margin-bottom: 14px;
+    line-height: 1.2;
 }
 
 .categorias-header p{
