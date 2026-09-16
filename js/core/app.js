@@ -22,6 +22,26 @@ async function carregarHeader(){
 
       header.innerHTML = await resposta.text();
 
+      const estaNaHome = !window.location.pathname.includes("/pages/");
+const caminhoBase = estaNaHome ? "" : "../";
+
+// Corrige o link da logomarca para abrir a página inicial
+header.querySelectorAll(".logo, #drawerHome").forEach(link => {
+    link.href = `${caminhoBase}index.html`;
+});
+
+// Corrige o caminho das imagens das logomarcas
+header.querySelectorAll(".logo img, #drawerHome img").forEach(img => {
+    img.src = `${caminhoBase}assets/images/logo/logo.png`;
+});
+
+// Corrige o caminho da imagem dos lápis
+const lapis = header.querySelector(".logo-ilustracao");
+
+if (lapis) {
+    lapis.src = `${caminhoBase}assets/images/lapis/lapis.png`;
+}
+
     corrigirLinksMenu();
 
     corrigirLinksDrawer();
