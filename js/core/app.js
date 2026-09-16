@@ -114,6 +114,15 @@ if (lapis) {
     if (linkContatoMobile) {
         linkContatoMobile.style.display = estaNaPaginaContato ? "none" : "";
     }
+
+    // Esconde "Início" também no menu mobile da página inicial.
+const linkInicioMobile = header.querySelector(
+    '#mobileDrawer nav a[href$="index.html"]'
+);
+
+if (linkInicioMobile) {
+    linkInicioMobile.style.display = estaNaPaginaInicial ? "none" : "";
+}
     
 
 /* AVISA QUE O HEADER TERMINOU DE CARREGAR */
@@ -267,6 +276,8 @@ function atualizarMenu(){
 
     if(pagina === "catalogo.html"){
 
+        
+
         primeiroItem = `
 
             <div class="categoria-selector">
@@ -406,63 +417,83 @@ function atualizarDrawerMobile(){
 
     if(pagina === "catalogo.html"){
 
-        // Ajusta os textos
-        links[0].querySelector(".menu-icon").textContent = "👧";
-        links[0].querySelector(".menu-text").textContent = "Meninas";
+        
 
-        links[1].querySelector(".menu-icon").textContent = "👦";
-        links[1].querySelector(".menu-text").textContent = "Meninos";
+       // Mantém "Início" e "Etiquetas Personalizadas" no menu.
+        // Usa os links 3 e 4 para os filtros de categoria.
+        links[0].querySelector(".menu-icon").textContent = "🏠";
+        links[0].querySelector(".menu-text").textContent = "Início";
+        links[0].href = "../index.html";
+        links[0].style.display = "flex";
+        links[0].onclick = null;
 
+        links[1].querySelector(".menu-icon").textContent = "📚";
+        links[1].querySelector(".menu-text").textContent = "Etiquetas Personalizadas";
+        links[1].href = "catalogo.html";
         links[1].style.display = "flex";
+        links[1].onclick = null;
 
-        links[0].href = "#";
-        links[1].href = "#";
+        // Meninas
+        links[2].querySelector(".menu-icon").textContent = "👧";
+        links[2].querySelector(".menu-text").textContent = "Meninas";
+        links[2].href = "#";
+        links[2].style.display = "flex";
 
-        links[0].onclick = function(e){
+        links[2].onclick = function(e){
+    e.preventDefault();
 
-            e.preventDefault();
+    filtrarCategoria("meninas");
 
-            filtrarCategoria("meninas");
+    document.getElementById("btn-meninas").classList.add("active");
+    document.getElementById("btn-meninos").classList.remove("active");
 
-            document.getElementById("btn-meninas").classList.add("active");
-            document.getElementById("btn-meninos").classList.remove("active");
+    document.getElementById("mobileDrawer").classList.remove("open");
+    document.getElementById("drawerOverlay").classList.remove("open");
+    };
 
-            document.getElementById("mobileDrawer").classList.remove("open");
-            document.getElementById("drawerOverlay").classList.remove("open");
+    // Meninos
+    links[3].querySelector(".menu-icon").textContent = "👦";
+    links[3].querySelector(".menu-text").textContent = "Meninos";
+    links[3].href = "#";
+    links[3].style.display = "flex";
 
-        };
+    links[3].onclick = function(e){
+    e.preventDefault();
 
-        links[1].onclick = function(e){
+    filtrarCategoria("meninos");
 
-            e.preventDefault();
+    document.getElementById("btn-meninos").classList.add("active");
+    document.getElementById("btn-meninas").classList.remove("active");
 
-            filtrarCategoria("meninos");
-
-            document.getElementById("btn-meninos").classList.add("active");
-            document.getElementById("btn-meninas").classList.remove("active");
-
-            document.getElementById("mobileDrawer").classList.remove("open");
-            document.getElementById("drawerOverlay").classList.remove("open");
-
-        };
+    document.getElementById("mobileDrawer").classList.remove("open");
+    document.getElementById("drawerOverlay").classList.remove("open");
+    };
 
     }
-
+// Oculta "Etiquetas Personalizadas" apenas no menu mobile do Catálogo.
+links[1].style.setProperty("display", "none", "important");
     // ======================================================
     // PRODUTO
     // ======================================================
 
     if(pagina === "produto.html"){
 
-        links[0].querySelector(".menu-icon").textContent = "⬅️";
-        links[0].querySelector(".menu-text").textContent = "Escolher outro modelo";
+        if (pagina === "produto.html") {
 
-        links[0].href = caminhoCatalogo;
-        links[0].onclick = null;
+    // Primeiro item: voltar ao catálogo.
+    links[0].querySelector(".menu-icon").textContent = "⬅️";
+    links[0].querySelector(".menu-text").textContent = "Escolher outro modelo";
+    links[0].href = caminhoCatalogo;
+    links[0].style.display = "flex";
+    links[0].onclick = null;
 
-        // Esconde o segundo item (Meninos)
-        links[1].style.display = "none";
-        links[1].onclick = null;
+    // Segundo item: Início.
+    links[1].querySelector(".menu-icon").textContent = "🏠";
+    links[1].querySelector(".menu-text").textContent = "Início";
+    links[1].href = "../index.html";
+    links[1].style.display = "flex";
+    links[1].onclick = null;
+}
 
     }
 
