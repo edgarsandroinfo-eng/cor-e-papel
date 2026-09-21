@@ -298,8 +298,6 @@ body {
 
     }
 
-}
-
 /* ==========================================================
    TOUCH ZOOM (Mobile)
 ========================================================== */
@@ -330,4 +328,33 @@ body {
 
 .codigo-interno {
     display: none;
+}
+
+/* Tablets: colunas fluidas sem ultrapassar a largura disponível. */
+@media (min-width: 601px) and (max-width: 1200px) {
+    .produto-content {
+        gap: 24px;
+    }
+
+    .produto-card-imagem,
+    .produto-card {
+        min-width: 0;
+        max-width: 480px;
+    }
+
+    .produto-card {
+        padding: 24px;
+    }
+
+    .produto-imagem {
+        max-width: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .produto-content {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+        max-width: 905px;
+        margin-inline: auto;
+    }
 }

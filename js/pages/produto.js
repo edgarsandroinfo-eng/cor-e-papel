@@ -52,7 +52,7 @@ const zoom = document.querySelector(".zoom-container");
 // DESKTOP
 // ==========================================================
 
-if(window.innerWidth > 768){
+if(window.matchMedia("(hover: hover) and (pointer: fine)").matches){
 
     zoom.addEventListener("mousemove", (e)=>{
 

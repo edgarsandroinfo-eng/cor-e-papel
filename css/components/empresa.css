@@ -289,3 +289,19 @@
 .empresa-conteudo ul + h2 {
     margin-top: 40px;
 }
+/* Tablets: evita uma coluna de texto estreita ao lado da foto. */
+@media (min-width: 601px) and (max-width: 1000px) {
+    .empresa {
+        padding: 48px 28px;
+    }
+
+    .empresa-container {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 32px;
+        max-width: 760px;
+    }
+
+    .empresa-imagem {
+        justify-self: center;
+    }
+}

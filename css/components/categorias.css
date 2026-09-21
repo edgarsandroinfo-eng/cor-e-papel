@@ -320,3 +320,30 @@
     }
 
 }
+/* Tablets: mantém os cartões legíveis em duas colunas. */
+@media (min-width: 601px) and (max-width: 1100px) {
+    .categorias {
+        padding: 32px 0 48px;
+    }
+
+    .categorias-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: auto;
+        gap: 20px;
+    }
+
+    .categoria-principal,
+    .categoria-card {
+        grid-row: auto;
+        min-height: 320px;
+        height: auto;
+    }
+
+    .categoria-overlay {
+        padding: 22px;
+    }
+
+    .categoria-overlay h3 {
+        font-size: 26px;
+    }
+}

@@ -1,7 +1,7 @@
 /* ==========================================================
    HEADER MOBILE 2.0
    Projeto Cor & Papel
-   Responsável apenas pelo celular
+   Navegação compacta para celulares e tablets
 ========================================================== */
 
 .mobile-drawer,
@@ -12,7 +12,7 @@
 }
 
 
-@media (max-width:768px){
+@media (max-width:1200px){
 
     /* ===============================
        Barra superior
@@ -194,6 +194,7 @@
     width:88%;
     max-width:360px;
     height:100vh;
+    height:100dvh;
 
     background:#FFF;
 
@@ -203,7 +204,7 @@
     box-shadow:
         0 20px 60px rgba(0,0,0,.20);
 
-    overflow:hidden;
+    overflow-y:auto;
 
     transform:translateX(-105%);
     transition:
@@ -497,3 +498,11 @@ transition:
 
 }
 
+
+/* Tablets: área confortável de toque para o contato. */
+@media (min-width: 601px) and (max-width: 1200px) {
+    #header .btn-whatsapp {
+        min-width: 44px;
+        min-height: 44px;
+    }
+}

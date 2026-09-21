@@ -747,3 +747,17 @@
 .contato > p {
     text-align: center;
 }
+/* Tablets: reserva espaço para o texto dos cartões ilustrados. */
+@media (min-width: 601px) and (max-width: 1000px) {
+    .contato-opcoes a.contato-card:is(.whatsapp, .instagram, .email, .telefone) {
+        grid-template-columns: minmax(0, 1fr) 100px;
+        padding: 20px;
+        gap: 12px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 700px) {
+    .contato-opcoes {
+        grid-template-columns: 1fr;
+    }
+}
